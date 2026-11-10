@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Router R1",
+    "serial": "SN-001",
+    "type": "router",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "Switch S1",
+    "serial": "SN-002",
+    "type": "switch",
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "Server A1",
+    "serial": "SN-003",
+    "type": "server",
+    "status": "maintenance"
+  }
+]
