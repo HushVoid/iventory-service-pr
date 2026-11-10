@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+tests/
+test-results/
+reports/
+data/
+*.log
+.venv/
+venv/
+compose.yaml
+README.md

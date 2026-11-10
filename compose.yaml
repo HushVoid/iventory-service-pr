@@ -1,0 +1,29 @@
+services:
+  inventory:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: edu/inventory-service:1.0
+    container_name: inventory-v18
+    ports:
+      - "8105:8005"
+    environment:
+      PORT: "8005"
+      MESSAGE: "Inventory online"
+      APP_VERSION: "1.0"
+    volumes:
+      - inventory-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8005/health', timeout=3).status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+    restart: unless-stopped
+
+volumes:
+  inventory-data:
