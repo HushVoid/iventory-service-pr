@@ -36,9 +36,9 @@ def serial_exists(devices: list, serial: str) -> bool:
 
 def add_device(devices: list, device: dict) -> list:
 
-    validate_device(device)
-    if serial_exists(devices, device["serial"]):
-        raise ValueError(f"Serial number '{device['serial']}' is not unique")
+#    validate_device(device)
+#    if serial_exists(devices, device["serial"]):
+ #       raise ValueError(f"Serial number '{device['serial']}' is not unique")
     devices.append(device)
     return devices
 
